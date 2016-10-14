@@ -63,11 +63,11 @@ var GoogleMapApi = (function(){
 
 
   function search(event) {
-    var queryItem = document.getElementById("searchField").value;
+    var searchItem = document.getElementById("searchField").value;
     var request = {
       location: myLatLng,
       radius: '10',
-      query: queryItem,
+      query: searchItem,
       openNow:true
     };
 
