@@ -16,7 +16,12 @@ var GoogleMapApi = (function(){
       zoom: 17
     });
 
-    searchButton.addEventListener("click", search);
+    // searchButton.addEventListener("click", search);
+
+    searchButton.addEventListener("click", function(){
+      search();
+
+    });
     
     var marker = new google.maps.Marker({
       position:myLatLng,
@@ -62,11 +67,11 @@ var GoogleMapApi = (function(){
   };
 
 
-  function search(event) {
+  function search() {
     var searchItem = document.getElementById("searchField").value;
     var request = {
       location: myLatLng,
-      radius: '10',
+      radius: '5',
       query: searchItem,
       openNow:true
     };
