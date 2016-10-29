@@ -29,7 +29,10 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> 334f968a3ac105ceb57fc43a7fd6d6d11f324753
 
 # Optional npm cache directory
 .npm
