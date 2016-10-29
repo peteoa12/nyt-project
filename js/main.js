@@ -6,7 +6,7 @@ var SimpleJson = (function() {
   var $searchField = $("#searchField");
   var $searchButton = $("#searchButton");
   var $searchResults = $("#results");
-   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.jsonp";
+  var url = "https://api.nytimes.com/svc/search/v2/articlesearch.jsonp";
 
 //--------INIT-----------------------------//
   function init(){
@@ -19,7 +19,6 @@ var SimpleJson = (function() {
   function setUpListeners() {
       $searchButton.on('click', function(event) {
         doSearchWithJsonP();
-        getArticleTitle();
         return false;
       });
 
@@ -45,32 +44,13 @@ var SimpleJson = (function() {
       dataType:'jsonp',
       jsonpCallback: 'svc_search_v2_articlesearch',
       method: 'GET',
-    }).done(function(data) {
+    }).done(displayArticles) {
       console.log('got data', data);
     }).fail(function(err) {
       throw err;
     });
 
  };
-
-  function  getArticleTitle() {
-    $.ajax({
-      url: url,
-      dataType:'jsonp',
-      jsonpCallback: 'svc_search_v2_articlesearch',
-      method:'GET',
-    })
-    .done(displayArticleTitle) {
-      console.log("article title", data);
-    })
-    .fail(function(err) {
-      console.log("uh-oh!");
-    })
-    .always(function() {
-      console.log("complete");
-    });
-    
-  }
 
   return {
     init:init
