@@ -6,13 +6,16 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 </head>
 
 <body>
-    <form id="search">
-        <label for="searchOptions">Search News Articles:</label>
-        <input id="searchField" type="text" name="searchField" placeholder="e.g. Chicago Cubs">
-        <button id="searchButton" type="button">Search</button>
+    <form id="search" class="search-form">
+        <label class="search__label" for="searchOptions">Search News Articles</label>
+        <div class="input-wrap">
+            <input class="search__input" id="searchField" type="text" name="searchField" placeholder="e.g. Chicago Cubs" autocomplete="on">
+            <button class="search__button" id="searchButton" type="button">Search</button>
+        </div>
     </form>
     <div id="results__wrap">
         <ul id="results">

@@ -1,0 +1,9 @@
+$orange:#FF9900;
+$gray:#333333;
+$white:#FFFFFF;
+$blue:#5275B5;
+$green:#339933;
+
+@mixin trans {
+	transition:all 0.2s ease-in-out;
+}

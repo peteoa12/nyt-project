@@ -6,7 +6,6 @@ var SimpleJson = (function() {
   var $searchField = $("#searchField");
   var $searchButton = $("#searchButton");
   var $searchResults = $("#results");
-  var $articleTitle = $('#results__title');
   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.jsonp";
 
 //--------INIT-----------------------------//
@@ -18,7 +17,7 @@ var SimpleJson = (function() {
 
 //-------CLICK HANDLERS-------------------//
   function setUpListeners() {
-      $articleTitle.on('click', function(event) {
+      $(".results__title").on('click', function(event) {
         console.log("success on article title!");
       });
       
@@ -42,7 +41,7 @@ var SimpleJson = (function() {
       
       $('#results').append(
           
-          '<a href ="#">' + '<li id="results__title">' + title + '</li>' + '</a>'
+          '<a href ="#" class="results__title">' + '<li>' + title + '</li>' + '</a>'
           
           );
     }

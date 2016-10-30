@@ -1,4 +1,5 @@
 @import 'vendor/reset';
+@import 'base/variables';
 @import '../../node_modules/susy/sass/susy';
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
 
@@ -12,11 +13,88 @@ $susy: (
   container-position: center, 
   last-flow: to,
   columns: 12,
-  gutters: 0.25,
+  gutters: 0.5,
   gutter-position: after, 
   global-box-sizing: border-box, 
 );
 
 $medium: 700px;
 $large: 960px;
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  @include trans;
+  background-color: $blue;
+}
+
+input, textarea, select, option{
+  background: none !important;
+  border-top: $orange 1px solid !important;
+  border-left: $orange 1px solid !important;
+  border-bottom: $orange 3px solid !important;
+  border-right: $orange 3px solid !important;
+  border-radius: 2px !important;
+  color: $orange !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.search-form {
+  @include full;
+  text-align: center;
+  // margin-top: span(1);
+  color: $white;
+  padding:50px 0;
+  background-color: $gray;
+
+}
+
+
+.search__label {
+  font-size: 1.5em;
+}
+
+.input-wrap {
+  margin-top:20px;
+}
+
+.search__input {
+  border-radius: 4px;
+  padding:10px;
+  font-size: 1em;
+}
+
+.search__button {
+  color: $white;
+  border:1px solid $blue;
+  background-color: $blue;
+  border-radius: 4px;
+  padding:11px;
+  font-size: 1em;
+  @include trans;
+
+  &:hover {
+    background-color: $orange;
+    border-color: $orange;
+  }
+}
+
+#results__wrap {
+  @include container;
+}
+
+.results__title {
+  font-size: 1.5em;
+  
+
+  li {
+    margin:20px 0;
+  }
+}
+
+
+
+
 
