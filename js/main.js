@@ -6,6 +6,7 @@ var SimpleJson = (function() {
   var $searchField = $("#searchField");
   var $searchButton = $("#searchButton");
   var $searchResults = $("#results");
+  var $articleTitle = $('#results__title');
   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.jsonp";
 
 //--------INIT-----------------------------//
@@ -17,18 +18,35 @@ var SimpleJson = (function() {
 
 //-------CLICK HANDLERS-------------------//
   function setUpListeners() {
+      $articleTitle.on('click', function(event) {
+        console.log("success on article title!");
+      });
+      
       $searchButton.on('click', function(event) {
         doSearchWithJsonP();
         return false;
       });
-
-
   }
 
 //-----DISPLAY ARTICLES--------------//
 
   function displayArticles(data) {
     console.log("success", data);
+    var articles = data.response.docs;
+    for (var i = 0; i < articles.length; i++) {
+      
+      var article = articles[i]
+      var title = article.headline.main;
+      // var date = response.meta.time;
+      // console.log(articles);
+      
+      $('#results').append(
+          
+          '<a href ="#">' + '<li id="results__title">' + title + '</li>' + '</a>'
+          
+          );
+    }
+
   }
 
 //-------SEARCH ARTICLES-----------------//
@@ -44,9 +62,7 @@ var SimpleJson = (function() {
       dataType:'jsonp',
       jsonpCallback: 'svc_search_v2_articlesearch',
       method: 'GET',
-    }).done(displayArticles) {
-      console.log('got data', data);
-    }).fail(function(err) {
+    }).done(displayArticles).fail(function(err) {
       throw err;
     });
 
