@@ -41,11 +41,9 @@ var SimpleJson = (function() {
       
       $('#results').append(
           
-          '<a href ="#" class="results__title">' + '<li>' + title + '</li>' + '</a>'
-          
-          );
+        '<a href ="#" class="results__title">' + '<li>' + title + '</li>' + '</a>' 
+      );
     }
-
   }
 
 //-------SEARCH ARTICLES-----------------//
@@ -64,7 +62,6 @@ var SimpleJson = (function() {
     }).done(displayArticles).fail(function(err) {
       throw err;
     });
-
  };
 
   return {

@@ -64,6 +64,7 @@ a {
   border-radius: 4px;
   padding:10px;
   font-size: 1em;
+  background-color: $white;
 }
 
 .search__button {
@@ -81,18 +82,25 @@ a {
   }
 }
 
-#results__wrap {
-  @include container;
-}
-
 .results__title {
   font-size: 1.5em;
-  
+} 
 
-  li {
-    margin:20px 0;
-  }
+#results__wrap {
+    width: 90%;
+    float: left;
+    margin:20px 5%;
+
+    a {
+      color: $gray;
+    }
+
+    li {
+      margin:20px 0;
+    }
+
 }
+
 
 
 
