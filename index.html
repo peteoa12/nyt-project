@@ -10,17 +10,23 @@
 </head>
 
 <body>
-    <form id="search" class="search-form">
-        <label class="search__label" for="searchOptions">Search News Articles</label>
-        <div class="input-wrap">
-            <input class="search__input" id="searchField" type="text" name="searchField" placeholder="e.g. Chicago Cubs" autocomplete="on">
-            <button class="search__button" id="searchButton" type="button">Search</button>
-        </div>
-    </form>
+    <div class="form-container">
+        <form id="search" class="search-form">
+            <label class="search__label" for="searchOptions">Search News Articles</label>
+            <div class="input-wrap">
+                <input class="search__input" id="searchField" type="text" name="searchField" placeholder="e.g. World Series" autocomplete="on">
+                <button class="search__button" id="searchButton" type="button">Search</button>
+            </div>
+        </form>
+    </div>
+
     <div id="results__wrap">
         <ul id="results">
             
         </ul>
+        <div id="logo" class="brand-container">
+            <img src="assets/img/nyt.png">
+        </div>
     </div>
 
 

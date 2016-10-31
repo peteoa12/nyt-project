@@ -20,6 +20,8 @@ var SimpleJson = (function() {
       
       $searchButton.on('click', function(event) {
         doSearchWithJsonP();
+        $('#results').empty();
+        $('#logo').addClass('brand__container--animate');
         return false;
       });
   }

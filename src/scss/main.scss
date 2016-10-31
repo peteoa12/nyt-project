@@ -13,7 +13,7 @@ $susy: (
   container-position: center, 
   last-flow: to,
   columns: 12,
-  gutters: 0.5,
+  gutters: 0.125,
   gutter-position: after, 
   global-box-sizing: border-box, 
 );
@@ -24,7 +24,7 @@ $large: 960px;
 body {
   font-family: 'Work Sans', sans-serif;
   @include trans;
-  // background-color: $blue;
+  background-color: $white;
 }
 
 input, textarea, select, option{
@@ -45,13 +45,32 @@ hr {
   background-color: $gray;
 }
 
+div {
+  @include trans;
+}
+
+.form-container {
+  background-image:url(../img/newyork.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include breakpoint($large) {
+    @include gallery(6 of 12);
+    height: 100vh;
+  }
+}
+
 .search-form {
   @include full;
   text-align: center;
-  // margin-top: span(1);
   color: $white;
   padding:50px 0;
-  background-color: $gray;
+  background-color:rgba(51,51,51,0.7);
+
+  @include breakpoint($large) {
+    margin-top: 340px;
+  }
 
 }
 
@@ -94,12 +113,13 @@ hr {
     width: 90%;
     float: left;
     margin:25px 5%;
+    @include trans;
 
     a {
       color: $gray;
       @include trans;
       &:hover {
-        color:$white;
+        color:$green;
       }
     }
 
@@ -111,6 +131,30 @@ hr {
       font-size: 0.75em;
     }
 
+    @include breakpoint($large) {
+      @include gallery(last 6 of 12);
+      height: 100%;
+    }
+
+}
+
+.brand-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 100%;
+  }
+
+  @include breakpoint($large) {
+    @include gallery(last 3 of 12);
+  }
+}
+
+.brand__container--animate {
+  transform: translate(1000%);
 }
 
 
