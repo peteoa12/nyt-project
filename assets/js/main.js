@@ -17,9 +17,6 @@ var SimpleJson = (function() {
 
 //-------CLICK HANDLERS-------------------//
   function setUpListeners() {
-      $(".results__title").on('click', function(event) {
-        console.log("success on article title!");
-      });
       
       $searchButton.on('click', function(event) {
         doSearchWithJsonP();
@@ -36,13 +33,35 @@ var SimpleJson = (function() {
       
       var article = articles[i]
       var title = article.headline.main;
-      // var date = response.meta.time;
-      // console.log(articles);
-      
+      var url = article.web_url;
+
+      var months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ]
+
+      var date = new Date(article.pub_date);
+      var month = months[date.getMonth()];
+      var day = date.getDate();
+      var year = date.getFullYear();
+
       $('#results').append(
           
-        '<a href ="#" class="results__title">' + '<li>' + title + '</li>' + '</a>' 
+        '<a href ="'+ url +'" class="results__title" target="_blank">' + '<li>' + title + '</li>' + '<span>' + month + ' ' + day + ',' + ' ' + year + '</span>' + '</a>' + '<hr>'
       );
+     
+      console.log(date);
+      console.log(url);
     }
   }
 
@@ -62,6 +81,7 @@ var SimpleJson = (function() {
     }).done(displayArticles).fail(function(err) {
       throw err;
     });
+
  };
 
   return {

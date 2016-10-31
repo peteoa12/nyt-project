@@ -24,7 +24,7 @@ $large: 960px;
 body {
   font-family: 'Work Sans', sans-serif;
   @include trans;
-  background-color: $blue;
+  // background-color: $blue;
 }
 
 input, textarea, select, option{
@@ -39,6 +39,10 @@ input, textarea, select, option{
 
 a {
   text-decoration: none;
+}
+
+hr {
+  background-color: $gray;
 }
 
 .search-form {
@@ -83,23 +87,33 @@ a {
 }
 
 .results__title {
-  font-size: 1.5em;
+  font-size: 1.2em;
 } 
 
 #results__wrap {
     width: 90%;
     float: left;
-    margin:20px 5%;
+    margin:25px 5%;
 
     a {
       color: $gray;
+      @include trans;
+      &:hover {
+        color:$white;
+      }
     }
 
     li {
-      margin:20px 0;
+      margin:20px 0 5px 0;
+    }
+
+    span {
+      font-size: 0.75em;
     }
 
 }
+
+
 
 
 
