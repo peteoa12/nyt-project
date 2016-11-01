@@ -3,7 +3,6 @@
 @import '../../node_modules/susy/sass/susy';
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
 
-
 $susy: (
   flow: ltr, 
   output: float, 
@@ -21,20 +20,13 @@ $susy: (
 $medium: 700px;
 $large: 960px;
 
+@import "partials/form-input";
+@import "partials/results";
+
 body {
   font-family: 'Work Sans', sans-serif;
   @include trans;
   background-color: $white;
-}
-
-input, textarea, select, option{
-  background: none !important;
-  border-top: $orange 1px solid !important;
-  border-left: $orange 1px solid !important;
-  border-bottom: $orange 3px solid !important;
-  border-right: $orange 3px solid !important;
-  border-radius: 2px !important;
-  color: $orange !important;
 }
 
 a {
@@ -49,113 +41,8 @@ div {
   @include trans;
 }
 
-.form-container {
-  background-image:url(../img/newyork.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  @include breakpoint($large) {
-    @include gallery(6 of 12);
-    height: 100vh;
-  }
-}
-
-.search-form {
-  @include full;
-  text-align: center;
-  color: $white;
-  padding:50px 0;
-  background-color:rgba(51,51,51,0.7);
-
-  @include breakpoint($large) {
-    margin-top: 340px;
-  }
-
-}
 
 
-.search__label {
-  font-size: 1.5em;
-}
-
-.input-wrap {
-  margin-top:20px;
-}
-
-.search__input {
-  border-radius: 4px;
-  padding:10px;
-  font-size: 1em;
-  background-color: $white;
-}
-
-.search__button {
-  color: $white;
-  border:1px solid $blue;
-  background-color: $blue;
-  border-radius: 4px;
-  padding:11px;
-  font-size: 1em;
-  @include trans;
-
-  &:hover {
-    background-color: $orange;
-    border-color: $orange;
-  }
-}
-
-.results__title {
-  font-size: 1.2em;
-} 
-
-#results__wrap {
-    width: 90%;
-    float: left;
-    margin:25px 5%;
-    @include trans;
-
-    a {
-      color: $gray;
-      @include trans;
-      &:hover {
-        color:$green;
-      }
-    }
-
-    li {
-      margin:20px 0 5px 0;
-    }
-
-    span {
-      font-size: 0.75em;
-    }
-
-    @include breakpoint($large) {
-      @include gallery(last 6 of 12);
-      height: 100%;
-    }
-
-}
-
-.brand-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  img {
-    width: 100%;
-  }
-
-  @include breakpoint($large) {
-    @include gallery(last 3 of 12);
-  }
-}
-
-.brand__container--animate {
-  transform: translate(1000%);
-}
 
 
 

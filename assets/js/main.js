@@ -3,6 +3,7 @@ var SimpleJson = (function() {
 
   //-------GLOBAL VARS-----------------------//
 
+  var $searchForm = $("#search");
   var $searchField = $("#searchField");
   var $searchButton = $("#searchButton");
   var $searchResults = $("#results");
@@ -10,27 +11,30 @@ var SimpleJson = (function() {
 
 //--------INIT-----------------------------//
   function init(){
-    console.log("init");
     setUpListeners();
   }
 
 
 //-------CLICK HANDLERS-------------------//
   function setUpListeners() {
-      
-      $searchButton.on('click', function(event) {
-        doSearchWithJsonP();
-        $('#results').empty();
-        $('#logo').addClass('brand__container--animate');
-        return false;
-      });
+    $searchForm.on('submit', function(event) {
+      event.preventDefault();
+      doSearchWithJsonP();
+      $('#results').empty();
+      $('#logo').addClass('brand__container--animate');
+      return false;
+    });
   }
 
 //-----DISPLAY ARTICLES--------------//
 
   function displayArticles(data) {
-    console.log("success", data);
     var articles = data.response.docs;
+
+    if (articles.length == 0) {
+      $('#results').append("No articles")
+    }
+
     for (var i = 0; i < articles.length; i++) {
       
       var article = articles[i]
@@ -61,9 +65,6 @@ var SimpleJson = (function() {
           
         '<a href ="'+ url +'" class="results__title" target="_blank">' + '<li>' + title + '</li>' + '<span>' + month + ' ' + day + ',' + ' ' + year + '</span>' + '</a>' + '<hr>'
       );
-     
-      console.log(date);
-      console.log(url);
     }
   }
 
